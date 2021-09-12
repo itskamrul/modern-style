@@ -72,13 +72,10 @@ const updateTaxAndCharge = () => {
 
 //grandTotal update function
 const updateTotal = () => {
-  const deliveryChargeText = document.getElementById("delivery-charge").innerText;
-  const deliveryCharge = parseFloat(deliveryChargeText)
-  const priceText = document.getElementById("price").innerText;
-  const price = parseFloat(priceText);
-  const texText = document.getElementById("total-tax").innerText;
-  const tex = parseFloat(texText);
-  const grandTotal = price + deliveryCharge + tex;
+  const converteddeliveryCharge = getInputValue("delivery-charge");
+  const convertedprice = getInputValue("price");
+  const convertedTax = getInputValue("total-tax");
+  const grandTotal = convertedprice + converteddeliveryCharge + convertedTax;
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal;
