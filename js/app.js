@@ -8,6 +8,8 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
+    console.log(product.rating.rate);
+    console.log(product.rating.count);
     const image = product.images;
     const div = document.createElement("div");
     div.classList.add("product");
@@ -18,6 +20,7 @@ const showProducts = (products) => {
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
+      <p>Rating: ${product.rating.rate}(${product.rating.count})</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
