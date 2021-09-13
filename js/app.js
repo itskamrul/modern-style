@@ -8,14 +8,13 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    console.log(product.rating.rate);
-    console.log(product.rating.count);
-    const image = product.images;
+    console.log(product.rating);
+    const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
-    <img class="product-image" src=${product.image}></img>
+    <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
@@ -76,10 +75,6 @@ const updateTaxAndCharge = () => {
 
 //grandTotal update function
 const updateTotal = () => {
-  // const converteddeliveryCharge = getInputValue("delivery-charge");
-  // const convertedprice = getInputValue("price");
-  // const convertedTax = getInputValue("total-tax");
-  // const grandTotal = convertedprice + converteddeliveryCharge + convertedTax;
   const grandTotal = getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
     const grandTotalFixed = grandTotal.toFixed(2);
